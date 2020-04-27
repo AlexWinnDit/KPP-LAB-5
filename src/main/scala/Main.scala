@@ -12,7 +12,9 @@ object Main {
     println( getListLength(list))
 
     val s = List("simple ", "example")
+    println(s.map(_.toString).flatten)
     println(s.flatMap(_.toString))
+
 
   }
 
