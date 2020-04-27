@@ -4,11 +4,11 @@ object Main {
     val list: List[Int] = List(1, 2, 85, 4, 5)
     println(list.min)
     println(getPrime(sieve(list.max), list))
-
+    println(mean(list))
 
   }
 
-    //Sieve of Eratosthenes
+  //Sieve of Eratosthenes
   def sieve(n: Int): Array[Int] = {
     val S: Array[Int] = new Array[Int](n + 1)
     S(1) = 0
@@ -33,10 +33,21 @@ object Main {
   }
 
 
-
-
+  //return prime list
   def getPrime(s: Array[Int], l: List[Int]): List[Int] = {
     l.filter(elem => s(elem) == 1)
+  }
+
+  //arithmetic mean
+  def mean(as: List[Int]): Float = {
+    def helper(as: List[Int], accumulator_length: Int, accumulator_sum: Int): Float = {
+      as match {
+        case Nil => accumulator_sum.toFloat / accumulator_length
+        case x :: xs => helper(xs, accumulator_length + 1, accumulator_sum + x)
+      }
+    }
+
+    helper(as, 0, 0)
   }
 
 }
