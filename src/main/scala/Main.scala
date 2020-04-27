@@ -11,6 +11,9 @@ object Main {
     println(mean(list))
     println( getListLength(list))
 
+    val s = List("simple ", "example")
+    println(s.flatMap(_.toString))
+
   }
 
   //Sieve of Eratosthenes
