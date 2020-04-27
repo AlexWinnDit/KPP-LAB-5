@@ -1,10 +1,15 @@
 object Main {
 
   def main(args: Array[String]): Unit = {
+
+    //Lab 5
     val list: List[Int] = List(1, 2, 85, 4, 5)
     println(list.min)
     println(getPrime(sieve(list.max), list))
+
+    //Lab 6
     println(mean(list))
+    println( getListLength(list))
 
   }
 
@@ -48,6 +53,10 @@ object Main {
     }
 
     helper(as, 0, 0)
+  }
+
+  def getListLength (l: List[Int]): Int = {
+    l.foldLeft ( 0 ) {(acc, i) => acc + 1}
   }
 
 }
